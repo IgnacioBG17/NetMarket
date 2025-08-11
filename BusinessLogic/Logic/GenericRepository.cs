@@ -1,0 +1,53 @@
+﻿using BusinessLogic.Data;
+using Core.Entities;
+using Core.Interfaces;
+using Core.Specifications;
+using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace BusinessLogic.Logic
+{
+    // Tienen que ser hijos de la clase ClaseBase 
+    public class GenericRepository<T> : IGenericRepository<T> where T : ClaseBase
+    {
+        private readonly MarketDbContext _context;
+        public GenericRepository(MarketDbContext context)
+        {
+            _context = context;
+        }
+        public async Task<IReadOnlyList<T>> GetAllAsync()
+        {
+            return await _context.Set<T>().ToListAsync();
+        }
+        public async Task<T> GetByIdAsync(int id)
+        {
+            return await _context.Set<T>().FindAsync(id);
+        }
+
+        /* Implementar la specification */
+        public async Task<T> GetByIdWithSpec(ISpecification<T> spec)
+        {
+            return await ApplySpecification(spec).FirstOrDefaultAsync();
+        }
+        public async Task<IReadOnlyList<T>> GetAllWithSpec(ISpecification<T> spec)
+        {
+            return await ApplySpecification(spec).ToListAsync();
+        }
+
+        /* 
+         * ApplySpecification():  Metodo para devolver la data de la entidad generica 
+         * tanto como queramos devolver un solo registro de la entidad y como tambien queramos devolver
+         * todo los registros de la entidad
+         */
+        private IQueryable<T> ApplySpecification(ISpecification<T> spec)
+        {
+            return SpecificationEvaluator<T>.GetQuery(_context.Set<T>().AsQueryable(), spec);
+        }
+        public async Task<int> CountAsync(ISpecification<T> spec)
+        {
+            return await ApplySpecification(spec).CountAsync();
+        }
+    }
+}

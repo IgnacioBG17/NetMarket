@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36327.8 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi", "WebApi\WebApi.csproj", "{BAC49FA4-7024-4426-95EE-4F41C1BA6940}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLogic", "BusinessLogic\BusinessLogic.csproj", "{1EACED4D-7366-4157-BC41-C3852C7D4B5C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{E279CE69-ED1C-430A-B50D-6B883D72C09D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BAC49FA4-7024-4426-95EE-4F41C1BA6940}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BAC49FA4-7024-4426-95EE-4F41C1BA6940}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BAC49FA4-7024-4426-95EE-4F41C1BA6940}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BAC49FA4-7024-4426-95EE-4F41C1BA6940}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1EACED4D-7366-4157-BC41-C3852C7D4B5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1EACED4D-7366-4157-BC41-C3852C7D4B5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1EACED4D-7366-4157-BC41-C3852C7D4B5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1EACED4D-7366-4157-BC41-C3852C7D4B5C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E279CE69-ED1C-430A-B50D-6B883D72C09D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E279CE69-ED1C-430A-B50D-6B883D72C09D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E279CE69-ED1C-430A-B50D-6B883D72C09D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E279CE69-ED1C-430A-B50D-6B883D72C09D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A912C502-1EB0-4A3F-AD30-306D324B6515}
+	EndGlobalSection
+EndGlobal
